@@ -5,6 +5,9 @@ server {
 	index index.php;
 	root /home/prj/project/public;
 	set $php_sock unix:/var/run/php/php8.3-fpm.sock;
+	location /m/ {
+		alias /home/prj/project/public/super/secret/directory/memes/;
+	}
 	location / {
 		try_files $uri $uri/ /index.php?$query_string;
 	}
